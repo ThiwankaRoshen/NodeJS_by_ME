@@ -1,15 +1,6 @@
-function sayHello(name){
-    console.log(`Hello ${name}`)
-}
+const os = require('os')
 
-//sayHello('trX')
-console.log('hey')
+var totalMem = os.totalmem()
+var freeMem = os.freemem()
 
-var logger = require('./logger')
-
-logger('TRX')
-////////////////////////////////////
-//const use because for safety of mutability
-const path = require('path')
-var pathObj = path.parse(__filename)
-console.log(pathObj)
+console.log(`total mem ${totalMem} free mem ${freeMem}`)
