@@ -7,4 +7,4 @@ console.log('hey')
 
 var logger = require('./logger')
 
-logger.log('TRX')
+logger('TRX')
