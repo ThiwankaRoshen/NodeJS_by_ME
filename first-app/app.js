@@ -1,23 +1,11 @@
-//const EventEmitter = require('events')
-// const emitter = new EventEmitter()
+const http = require('http')
 
-// emitter.on('messageLogged', function(){
-//     console.log('Listener called')
-// })
+const server = http.createServer()
 
-// emitter.emit('messageLogged')
- 
-/////////////////
-
-// emitter.on('messageLogged', function(arg){
-//     console.log('Listener called',arg)
-//  })
-const Logger = require('./logger')
-const logger = new Logger();
-                            //arrow notation 
-logger.on('messageLogged', (arg)=>{
-    console.log('Listener called',arg)
+//when  you go to the link localhost:300 this get connection
+server.on('connection', (socket)=>{
+    console.log('new connection',socket)
 })
+server.listen(3000)
+console.log('lintening port 3000....')
 
-
-logger.log('Trix')
