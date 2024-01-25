@@ -6,9 +6,16 @@ const emitter = new EventEmitter()
 // })
 
 // emitter.emit('messageLogged')
+ 
+/////////////////
 
-emitter.on('messageLogged', function(arg){
+// emitter.on('messageLogged', function(arg){
+//     console.log('Listener called',arg)
+//  })
+                           //arrow notation 
+emitter.on('messageLogged', (arg)=>{
     console.log('Listener called',arg)
 })
 
-emitter.emit('messageLogged', {id:1, url:'http//'})
+const log = require('./logger')
+log('Trix')
