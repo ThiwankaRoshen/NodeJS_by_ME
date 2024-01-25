@@ -1,12 +1,13 @@
 const EventEmitter = require('events')
-const emitter = new EventEmitter()
+// const emitter = new EventEmitter()
 
 var url = 'https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html'
 
-
-function log(message){
-    console.log(message)
-    emitter.emit('messageLogged', {id:1, url:'http//'})
+class Logger extends EventEmitter{    
+    log(message){
+        console.log(message)
+        this.emit('messageLogged', {id:1, url:'http//'})
+    }
 }
 
-module.exports =log
+module.exports =Logger
